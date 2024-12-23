@@ -1,0 +1,53 @@
+body {
+    background-image: url('bg.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    perspective: 1200px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Archivo Narrow', sans-serif;
+}
+
+.card{
+    transform-style: preserve-3d;
+    position:relative;
+    height: 500px;
+    cursor: pointer;
+}
+
+.front, .back, .page {
+    transform-style: preserve-3d;
+    transform-origin: left center;
+    transition: transform .5s ease-in-out, box-shadow .5s ease-in-out;
+    position: absolute;
+    width: 400px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 40px;
+    background-color: goldenrod;
+}
+
+.card:hover .front {
+    transform: rotateY(-160deg);
+    box-shadow: 0 1em 3em 0 rgba(0,0,0, .2);
+}
+.card:hover .page {
+    transform: rotateY(-159deg);
+    box-shadow: 0 1em 3em 0 rgba(0,0,0, .2);
+}
+.card:hover .back {
+    transform: rotateY(-20deg);
+    box-shadow: 0 1em 3em 0 rgba(0,0,0, .2);
+}
+
+.front, .page {
+    background: url('winter_scene.jpg') no-repeat center darkred;
+    background-size: cover;
+}
+
+h1 {font-family: 'Cookie',serif; font-size: 40px; margin-top: 40px; color: goldenrod;}
+.message { margin-top: 30px; color: darkred;}
+p{font-size: 40px;}
